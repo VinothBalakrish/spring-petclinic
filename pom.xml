@@ -300,7 +300,56 @@
       <name>Spring Milestones</name>
       <url>https://repo.spring.io/milestone</url>
     </repository>
+
+     <!-- Nexus Snapshots Repository -->
+    <repository>
+        <id>nexus-snapshots</id>
+        <name>Nexus Snapshots Repository</name>
+        <url>http://65.0.204.150:8081/repository/maven-snapshots/</url>
+        <snapshots>
+            <enabled>true</enabled> <!-- Enable snapshots -->
+        </snapshots>
+        <releases>
+            
+          
+<enabled>false</enabled> <!-- Disable releases -->
+        </releases>
+    </repository>
+
+    <!-- Nexus Releases Repository -->
+    <repository>
+        <id>nexus-releases</id>
+        <name>Nexus Releases Repository</name>
+        <url>http://65.0.204.150:8081/repository/maven-releases/</url>
+        <snapshots>
+            <enabled>false</enabled> <!-- Disable snapshots -->
+        </snapshots>
+        <releases>
+            <enabled>true</enabled> <!-- Enable releases -->
+        </releases>
+    </repository>
+    
   </repositories>
+
+
+  <distributionManagement>
+    <!-- Nexus Snapshots Repository for deployment -->
+    <snapshotRepository>
+        <id>nexus-snapshots</id>
+        <name>Nexus Snapshots Repository</name>
+        <url>http://65.0.204.150:8081/repository/maven-snapshots/</url>
+    </snapshotRepository>
+
+    <!-- Nexus Releases Repository for deployment -->
+    <repository>
+        <id>nexus-releases</id>
+        <name>Nexus Releases Repository</name>
+        <url>http://65.0.204.150:8081/repository/maven-releases/</url>
+    </repository>
+</distributionManagement>
+
+
+  
   <pluginRepositories>
     <pluginRepository>
       <snapshots>
