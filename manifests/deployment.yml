@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: vinothbalakrishspringpetclinic 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vinothbalakrishspringpetclinic
+  template:
+    metadata:
+      labels:
+        app: vinothbalakrishspringpetclinic 
+    spec:
+      containers:
+        - name: vinothbalakrishspringpetclinic 
+          image: vinoth.azurecr.io/vinothbalakrishspringpetclinic
+          ports:
+          - containerPort: 80
